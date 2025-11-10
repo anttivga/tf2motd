@@ -5,18 +5,28 @@
 <title>Русский Завод — MOTD</title>
 <style>
 body {
-  background-color: #535058; /* цвет доски TF2 */
+  background-color: #55525a; /* общий фон, близкий к цвету доски */
   color: #f2f2f2;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
+
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 5% auto;
-  padding: 20px;
+  padding: 0 20px;
   text-align: center;
 }
+
+/* основная “карточка” поверх доски */
+.panel {
+  background-color: #1e1e22;
+  border-radius: 18px;
+  padding: 28px 32px 22px 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
 button {
   background-color: #5865F2;
   color: white;
@@ -30,13 +40,20 @@ button {
 button:hover {
   background-color: #4752C4;
 }
+
 h1 {
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
   color: #ffffff;
 }
+
+p {
+  margin-top: 4px;
+  margin-bottom: 18px;
+}
+
 .qr {
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 18px;
+  margin-bottom: 22px;
 }
 .qr img {
   width: 220px;
@@ -44,53 +61,66 @@ h1 {
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
+.qr-note {
+  color: #aaaaaa;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
 .rules {
-  background-color: #222;
   text-align: left;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 30px;
+  margin-top: 18px;
   line-height: 1.5;
   font-size: 15px;
 }
+.rules h2 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+.rules ul {
+  margin: 0 0 6px 20px;
+  padding: 0;
+}
+
 .footer {
-  margin-top: 25px;
+  margin-top: 8px;
   font-size: 13px;
-  color: #ddd;
+  color: #bbbbbb;
 }
 </style>
 </head>
 <body>
 <div class="container">
-  <h1>Добро пожаловать на Русский Завод</h1>
-  <p>Заходи на наш Дискорд:</p>
+  <div class="panel">
+    <h1>Добро пожаловать на Русский Завод</h1>
+    <p>Заходи на наш Дискорд:</p>
 
-  <button onclick="window.open('https://discord.gg/HHTDNBBzDd', '_blank')">
-    Присоединиться в Discord
-  </button>
+    <button onclick="window.open('https://discord.gg/HHTDNBBzDd', '_blank')">
+      Присоединиться в Discord
+    </button>
 
-  <div class="qr">
-    <img src="qr-code.png" alt="Discord QR">
-    <div style="color:#aaa;font-size:14px;margin-top:8px;">
-      Отсканируй QR, чтобы открыть Discord на телефоне
+    <div class="qr">
+      <img src="qr-code.png" alt="Discord QR">
+      <div class="qr-note">
+        Отсканируй QR, чтобы открыть Discord на телефоне
+      </div>
     </div>
-  </div>
 
-  <div class="rules">
-    <h2>Преимущества сервера:</h2>
-    <ul>
-      <li>100% ВАНИЛЬНЫЙ ГЕЙМПЛЕЙ БЕЗ ХЛАМА И ПЛАГИНОВ</li>
-      <li>100% СТАБИЛЬНОСТЬ (пинг, регистрация попаданий)</li>
-      <li>ОТЗЫВЧИВАЯ И АДЕКВАТНАЯ АДМИНИСТРАЦИЯ</li>
-      <li>ФРЕНДЛИКОВ УБИВАТЬ МОЖНО</li>
-      <li>ПРАВИЛО ТОЛЬКО ОДНО — НЕ БУДЬ ДОЛБОЁБОМ И НАСЛАЖДАЙСЯ ИГРОЙ.</li>
-    </ul>
-  </div>
+    <div class="rules">
+      <h2>Преимущества сервера:</h2>
+      <ul>
+        <li>100% ВАНИЛЬНЫЙ ГЕЙМПЛЕЙ БЕЗ ХЛАМА И ПЛАГИНОВ</li>
+        <li>100% СТАБИЛЬНОСТЬ (пинг, регистрация попаданий)</li>
+        <li>ОТЗЫВЧИВАЯ И АДЕКВАТНАЯ АДМИНИСТРАЦИЯ</li>
+        <li>ФРЕНДЛИКОВ УБИВАТЬ МОЖНО</li>
+        <li>ПРАВИЛО ТОЛЬКО ОДНО — НЕ БУДЬ ДОЛБОЁБОМ И НАСЛАЖДАЙСЯ ИГРОЙ.</li>
+      </ul>
+    </div>
 
-  <div class="footer">
-    ПЕРЕЗАГРУЗКА СЕРВЕРА КАЖДЫЙ ДЕНЬ В 08:00 МСК
+    <div class="footer">
+      ПЕРЕЗАГРУЗКА СЕРВЕРА КАЖДЫЙ ДЕНЬ В 08:00 МСК
+    </div>
   </div>
 </div>
 </body>
 </html>
-
