@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="utf-8">
-<title>Server MOTD</title>
+<title>Русский Завод — MOTD</title>
 <style>
 body {
   background-color: #1b1b1b;
@@ -34,6 +34,16 @@ h1 {
   margin-bottom: 10px;
   color: #ffffff;
 }
+.qr {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.qr img {
+  width: 220px;
+  height: 220px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
 .rules {
   background-color: #222;
   text-align: left;
@@ -42,12 +52,6 @@ h1 {
   margin-top: 30px;
   line-height: 1.5;
   font-size: 15px;
-}
-hr {
-  border: none;
-  height: 1px;
-  background-color: #333;
-  margin: 25px 0;
 }
 .footer {
   margin-top: 25px;
@@ -60,11 +64,17 @@ hr {
 <div class="container">
   <h1>Добро пожаловать на Русский Завод</h1>
   <p>Заходи на наш Дискорд:</p>
+
   <button onclick="window.open('https://discord.gg/HHTDNBBzDd', '_blank')">
     Присоединиться в Discord
   </button>
 
-  <hr>
+  <div class="qr">
+    <img src="qr-code.png" alt="Discord QR">
+    <div style="color:#aaa;font-size:14px;margin-top:8px;">
+      Отсканируй QR, чтобы открыть Discord на телефоне
+    </div>
+  </div>
 
   <div class="rules">
     <h2>Преимущества сервера:</h2>
@@ -72,8 +82,8 @@ hr {
       <li>100% ВАНИЛЬНЫЙ ГЕЙМПЛЕЙ БЕЗ ХЛАМА И ПЛАГИНОВ</li>
       <li>100% СТАБИЛЬНОСТЬ (пинг, регистрация попаданий)</li>
       <li>ОТЗЫВЧИВАЯ И АДЕКВАТНАЯ АДМИНИСТРАЦИЯ</li>
-	  <li>ФРЕНДЛИКОВ УБИВАТЬ МОЖНО</li>
-	  <li>ПРАВИЛО ТОЛЬКО ОДНО — НЕ БУДЬ ДОЛБОЁБОМ И НАСЛАЖДАЙСЯ ИГРОЙ.</li>
+      <li>ФРЕНДЛИКОВ УБИВАТЬ МОЖНО</li>
+      <li>ПРАВИЛО ТОЛЬКО ОДНО — НЕ БУДЬ ДОЛБОЁБОМ И НАСЛАЖДАЙСЯ ИГРОЙ.</li>
     </ul>
   </div>
 
@@ -83,5 +93,3 @@ hr {
 </div>
 </body>
 </html>
-
-
