@@ -4,59 +4,54 @@
 <meta charset="utf-8">
 <title>Русский Завод — MOTD</title>
 <style>
-body {
-  background-color: #1b1b1b;
-  color: #f2f2f2;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+/* Compact layout to fit 1920×1080 Steam MOTD */
+body{
+  background:#1b1b1b; color:#f2f2f2; font-family:Arial, sans-serif; margin:0; padding:0;
 }
-.container {
-  max-width: 800px;
-  margin: 2% auto 0 auto; /* было 5%, теперь выше */
-  padding: 20px;
-  text-align: center;
+.container{
+  max-width:760px;           /* чуть уже */
+  margin:1% auto 0 auto;     /* выше и меньше поля */
+  padding:14px 16px;         /* компактнее внутренние отступы */
+  text-align:center;
 }
-button {
-  background-color: #5865F2;
-  color: white;
-  border: none;
-  padding: 14px 36px;
-  font-size: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s;
+h1{
+  margin:0 0 6px 0;
+  font-size:28px;            /* было крупнее */
+  color:#fff;
 }
-button:hover {
-  background-color: #4752C4;
+p{
+  margin:0 0 10px 0;
+  font-size:14px;
+  color:#d8d8d8;
 }
-h1 {
-  margin-bottom: 10px;
-  color: #ffffff;
+button{
+  background:#5865F2; color:#fff; border:0;
+  padding:10px 28px;         /* меньше высота */
+  font-size:16px;            /* компактнее */
+  border-radius:10px; cursor:pointer; transition:.2s;
 }
-.qr {
-  margin-top: 20px;
-  margin-bottom: 25px;
+button:hover{ background:#4752C4; }
+
+.qr{ margin:14px 0 16px 0; }
+.qr img{
+  width:220px; height:220px; border-radius:10px;
+  box-shadow:0 0 12px rgba(0,0,0,.35);
 }
-.qr img {
-  width: 220px;
-  height: 220px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+.qr-note{ color:#aaa; font-size:12px; margin-top:6px; }
+
+.rules{
+  background:#222; text-align:left;
+  padding:12px; border-radius:10px;
+  margin-top:16px; line-height:1.35; font-size:14px;  /* компактнее строки */
 }
-.rules {
-  background-color: #222;
-  text-align: left;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 25px;
-  line-height: 1.5;
-  font-size: 15px;
+.rules h2{
+  margin:0 0 6px 0; font-size:16px;
 }
-.footer {
-  margin-top: 20px;
-  font-size: 13px;
-  color: #999;
+.rules ul{
+  margin:0 0 0 18px; padding:0;
+}
+.footer{
+  margin-top:14px; font-size:12px; color:#999;
 }
 </style>
 </head>
@@ -65,15 +60,13 @@ h1 {
   <h1>Добро пожаловать на Русский Завод</h1>
   <p>Заходи на наш Дискорд:</p>
 
-  <button onclick="window.open('https://discord.gg/HHTDNBBzDd', '_blank')">
+  <button onclick="window.open('https://discord.gg/HHTDNBBzDd','_blank')">
     Присоединиться в Discord
   </button>
 
   <div class="qr">
     <img src="qr-code.png" alt="Discord QR">
-    <div style="color:#aaa;font-size:14px;margin-top:8px;">
-      Отсканируй QR, чтобы открыть Discord на телефоне
-    </div>
+    <div class="qr-note">Отсканируй QR, чтобы открыть Discord на телефоне</div>
   </div>
 
   <div class="rules">
@@ -87,9 +80,7 @@ h1 {
     </ul>
   </div>
 
-  <div class="footer">
-    ПЕРЕЗАГРУЗКА СЕРВЕРА КАЖДЫЙ ДЕНЬ В 08:00 МСК
-  </div>
+  <div class="footer">ПЕРЕЗАГРУЗКА СЕРВЕРА КАЖДЫЙ ДЕНЬ В 08:00 МСК</div>
 </div>
 </body>
 </html>
