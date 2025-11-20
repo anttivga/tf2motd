@@ -30,7 +30,7 @@ p{
   background:#5865F2; color:#fff;
   border:0; padding:10px 28px; font-size:16px;
   border-radius:10px; cursor:pointer; transition:.2s;
-  margin-right:12px;
+  margin-bottom:12px;
 }
 .btn-discord:hover{ background:#4752C4; }
 
@@ -38,24 +38,30 @@ p{
   background:#f36c3d; color:#fff;
   border:0; padding:10px 28px; font-size:16px;
   border-radius:10px; cursor:pointer; transition:.2s;
-  margin-left:12px;
+  margin-bottom:12px;
 }
 .btn-donate:hover{ background:#d95c31; }
 
-/* QR layout – two columns */
-.qr-row{
+/* Two-column layout */
+.columns{
   display:flex;
   justify-content:center;
   align-items:flex-start;
-  gap:40px;              /* расстояние между QR */
-  margin-top:18px;
-  margin-bottom:18px;
+  gap:60px;       /* расстояние между колонками */
+  margin-top:20px;
 }
-.qr-block{
+
+/* Inside each column */
+.col{
   text-align:center;
 }
-.qr-block img{
-  width:220px; height:220px;
+
+.qr{
+  margin-top:8px;
+}
+.qr img{
+  width:220px;
+  height:220px;
   border-radius:10px;
   box-shadow:0 0 12px rgba(0,0,0,.35);
 }
@@ -67,7 +73,7 @@ p{
 .rules{
   background:#222; text-align:left;
   padding:12px; border-radius:10px;
-  margin-top:16px; line-height:1.35; font-size:14px;
+  margin-top:22px; line-height:1.35; font-size:14px;
 }
 .rules h2{
   margin:0 0 6px 0; font-size:16px;
@@ -76,7 +82,6 @@ p{
   margin:0 0 0 18px; padding:0;
 }
 
-/* Footer */
 .footer{
   margin-top:14px; font-size:12px; color:#999;
 }
@@ -88,41 +93,37 @@ p{
   <h1>Добро пожаловать на Русский Завод</h1>
   <p>Присоединяйся и поддержи проект:</p>
 
-  <!-- Buttons row -->
-  <div>
-    <button class="btn-discord"
-      onclick="window.open('https://discord.gg/HHTDNBBzDd','_blank')">
-      Присоединиться в Discord
-    </button>
+  <!-- Two columns: button + QR under it -->
+  <div class="columns">
 
-    <button class="btn-donate"
-      onclick="window.open('https://boosty.to/zavodtf2/donate','_blank')">
-      Поддержать проект
-    </button>
-  </div>
+    <!-- LEFT: Discord -->
+    <div class="col">
+      <button class="btn-discord"
+        onclick="window.open('https://discord.gg/HHTDNBBzDd','_blank')">
+        Присоединиться в Discord
+      </button>
 
-  <!-- Two QR codes in row -->
-  <div class="qr-row">
-
-    <!-- LEFT: Discord QR -->
-    <div class="qr-block">
-      <img src="qr-code.png" alt="Discord QR">
-      <div class="qr-note">
-        Отсканируй, чтобы открыть Discord на телефоне
+      <div class="qr">
+        <img src="qr-code.png" alt="Discord QR">
+        <div class="qr-note">Отсканируй, чтобы открыть Discord</div>
       </div>
     </div>
 
-    <!-- RIGHT: Donation QR -->
-    <div class="qr-block">
-      <img src="zavodtf2-donate.png" alt="Donate QR">
-      <div class="qr-note">
-        Отсканируй, чтобы поддержать проект
+    <!-- RIGHT: Donate -->
+    <div class="col">
+      <button class="btn-donate"
+        onclick="window.open('https://boosty.to/zavodtf2/donate','_blank')">
+        Поддержать проект
+      </button>
+
+      <div class="qr">
+        <img src="zavodtf2-donate.png" alt="Donate QR">
+        <div class="qr-note">Отсканируй, чтобы поддержать проект</div>
       </div>
     </div>
 
   </div>
 
-  <!-- Rules block -->
   <div class="rules">
     <h2>Преимущества сервера:</h2>
     <ul>
