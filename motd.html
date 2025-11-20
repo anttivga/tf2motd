@@ -4,45 +4,70 @@
 <meta charset="utf-8">
 <title>Русский Завод — MOTD</title>
 <style>
-/* Compact layout to fit 1920×1080 Steam MOTD */
 body{
-  background:#1b1b1b; color:#f2f2f2; font-family:Arial, sans-serif; margin:0; padding:0;
+  background:#1b1b1b; color:#f2f2f2; font-family:Arial, sans-serif;
+  margin:0; padding:0;
 }
 .container{
-  max-width:760px;           /* чуть уже */
-  margin:1% auto 0 auto;     /* выше и меньше поля */
-  padding:14px 16px;         /* компактнее внутренние отступы */
+  max-width:900px;
+  margin:1% auto 0 auto;
+  padding:14px 16px;
   text-align:center;
 }
+
+/* Titles */
 h1{
   margin:0 0 6px 0;
-  font-size:28px;            /* было крупнее */
+  font-size:28px;
   color:#fff;
 }
 p{
-  margin:0 0 10px 0;
-  font-size:14px;
-  color:#d8d8d8;
+  margin:0 0 10px 0; font-size:14px; color:#d8d8d8;
 }
-button{
-  background:#5865F2; color:#fff; border:0;
-  padding:10px 28px;         /* меньше высота */
-  font-size:16px;            /* компактнее */
-  border-radius:10px; cursor:pointer; transition:.2s;
-}
-button:hover{ background:#4752C4; }
 
-.qr{ margin:14px 0 16px 0; }
-.qr img{
-  width:220px; height:220px; border-radius:10px;
+/* Buttons */
+.btn-discord{
+  background:#5865F2; color:#fff;
+  border:0; padding:10px 28px; font-size:16px;
+  border-radius:10px; cursor:pointer; transition:.2s;
+  margin-right:12px;
+}
+.btn-discord:hover{ background:#4752C4; }
+
+.btn-donate{
+  background:#f36c3d; color:#fff;
+  border:0; padding:10px 28px; font-size:16px;
+  border-radius:10px; cursor:pointer; transition:.2s;
+  margin-left:12px;
+}
+.btn-donate:hover{ background:#d95c31; }
+
+/* QR layout – two columns */
+.qr-row{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:40px;              /* расстояние между QR */
+  margin-top:18px;
+  margin-bottom:18px;
+}
+.qr-block{
+  text-align:center;
+}
+.qr-block img{
+  width:220px; height:220px;
+  border-radius:10px;
   box-shadow:0 0 12px rgba(0,0,0,.35);
 }
-.qr-note{ color:#aaa; font-size:12px; margin-top:6px; }
+.qr-note{
+  color:#aaa; font-size:12px; margin-top:6px;
+}
 
+/* Rules */
 .rules{
   background:#222; text-align:left;
   padding:12px; border-radius:10px;
-  margin-top:16px; line-height:1.35; font-size:14px;  /* компактнее строки */
+  margin-top:16px; line-height:1.35; font-size:14px;
 }
 .rules h2{
   margin:0 0 6px 0; font-size:16px;
@@ -50,6 +75,8 @@ button:hover{ background:#4752C4; }
 .rules ul{
   margin:0 0 0 18px; padding:0;
 }
+
+/* Footer */
 .footer{
   margin-top:14px; font-size:12px; color:#999;
 }
@@ -57,18 +84,45 @@ button:hover{ background:#4752C4; }
 </head>
 <body>
 <div class="container">
+
   <h1>Добро пожаловать на Русский Завод</h1>
-  <p>Заходи на наш Дискорд:</p>
+  <p>Присоединяйся и поддержи проект:</p>
 
-  <button onclick="window.open('https://discord.gg/HHTDNBBzDd','_blank')">
-    Присоединиться в Discord
-  </button>
+  <!-- Buttons row -->
+  <div>
+    <button class="btn-discord"
+      onclick="window.open('https://discord.gg/HHTDNBBzDd','_blank')">
+      Присоединиться в Discord
+    </button>
 
-  <div class="qr">
-    <img src="qr-code.png" alt="Discord QR">
-    <div class="qr-note">Отсканируй QR, чтобы открыть Discord на телефоне</div>
+    <button class="btn-donate"
+      onclick="window.open('https://boosty.to/zavodtf2/donate','_blank')">
+      Поддержать проект
+    </button>
   </div>
 
+  <!-- Two QR codes in row -->
+  <div class="qr-row">
+
+    <!-- LEFT: Discord QR -->
+    <div class="qr-block">
+      <img src="qr-code.png" alt="Discord QR">
+      <div class="qr-note">
+        Отсканируй, чтобы открыть Discord на телефоне
+      </div>
+    </div>
+
+    <!-- RIGHT: Donation QR -->
+    <div class="qr-block">
+      <img src="zavodtf2-donate.png" alt="Donate QR">
+      <div class="qr-note">
+        Отсканируй, чтобы поддержать проект
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Rules block -->
   <div class="rules">
     <h2>Преимущества сервера:</h2>
     <ul>
@@ -76,11 +130,12 @@ button:hover{ background:#4752C4; }
       <li>100% СТАБИЛЬНОСТЬ (пинг, регистрация попаданий)</li>
       <li>ОТЗЫВЧИВАЯ И АДЕКВАТНАЯ АДМИНИСТРАЦИЯ</li>
       <li>ФРЕНДЛИКОВ УБИВАТЬ МОЖНО</li>
-      <li>ПРАВИЛО ТОЛЬКО ОДНО — НЕ БУДЬ ДОЛБОЁБОМ И НАСЛАЖДАЙСЯ ИГРОЙ.</li>
+      <li>ПРАВИЛО ТОЛЬКО ОДНО — НЕ БУДЬ ДОЛБОЁБОМ И НАСЛАЖДАЙСЯ ИГРОЙ</li>
     </ul>
   </div>
 
   <div class="footer">ПЕРЕЗАГРУЗКА СЕРВЕРА КАЖДЫЙ ДЕНЬ В 08:00 МСК</div>
+
 </div>
 </body>
 </html>
